@@ -64,7 +64,7 @@ export default {
     97: '0x89dde524604c21794AD2040FefF63DF977eeC999',
   },
   predictionsWithToken: {
-    56: '0x516ffd7D1e0Ca40b1879935B2De87cb20Fc1124b',
+    56: '0xa4A3A93E5BD9041837d49fac51f644D80b4f3352',
     97: '0x89dde524604c21794AD2040FefF63DF977eeC999',
   },
   chainlinkOracle: {

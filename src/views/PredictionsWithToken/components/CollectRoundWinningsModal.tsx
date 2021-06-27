@@ -23,7 +23,7 @@ import { usePriceBnbBusd } from 'state/hooks'
 import { markBetAsCollected } from 'state/predictionsWithToken'
 import { useTranslation } from 'contexts/Localization'
 import useToast from 'hooks/useToast'
-import { usePredictionsContract } from 'hooks/useContract'
+import { usePredictionsWithTokenContract } from 'hooks/useContract'
 import { formatBnb } from '../helpers'
 
 interface CollectRoundWinningsModalProps extends InjectedModalProps {
@@ -56,7 +56,7 @@ const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps> = ({
   const { account } = useWeb3React()
   const { t } = useTranslation()
   const { toastSuccess, toastError } = useToast()
-  const predictionsContract = usePredictionsContract()
+  const predictionsContract = usePredictionsWithTokenContract()
   const bnbBusdPrice = usePriceBnbBusd()
   const dispatch = useAppDispatch()
 

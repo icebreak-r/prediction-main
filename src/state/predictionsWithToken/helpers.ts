@@ -188,7 +188,7 @@ export const getStaticPredictionsData = async () => {
     methods.paused().call,
     methods.bufferBlocks().call,
   ])
-  console.log(currentEpoch)
+  /* console.log(currentEpoch) */
   return {
     status: isPaused ? PredictionStatus.PAUSED : PredictionStatus.LIVE,
     currentEpoch: Number(currentEpoch),

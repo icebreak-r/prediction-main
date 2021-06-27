@@ -8,6 +8,7 @@ import { BetPosition, Round } from 'state/types'
 import { useBlock, useGetIntervalBlocks } from 'state/hooks'
 import { markPositionAsEntered } from 'state/predictionsWithToken'
 import useToast from 'hooks/useToast'
+import { usePredictionAllowance } from 'hooks/useAllowance'
 import CardFlip from '../CardFlip'
 import { formatBnb, getBnbAmount } from '../../helpers'
 import { RoundResultBox, PrizePoolRow } from '../RoundResult'
@@ -15,6 +16,7 @@ import MultiplierArrow from './MultiplierArrow'
 import Card from './Card'
 import CardHeader from './CardHeader'
 import SetPositionCard from './SetPositionCard'
+import ApproveCard from './ApproveCard'
 
 interface OpenRoundCardProps {
   round: Round
@@ -38,6 +40,8 @@ const OpenRoundCard: React.FC<OpenRoundCardProps> = ({
   bullMultiplier,
   bearMultiplier,
 }) => {
+  const allowance = usePredictionAllowance().toNumber()
+
   const [state, setState] = useState<State>({
     isSettingPosition: false,
     position: BetPosition.BULL,
@@ -179,12 +183,18 @@ const OpenRoundCard: React.FC<OpenRoundCardProps> = ({
           />
         </CardBody>
       </Card>
+      {allowance < 1e24 ? 
+      <ApproveCard
+        onBack={handleBack}
+      />
+      :
       <SetPositionCard
         onBack={handleBack}
         onSuccess={handleSuccess}
         position={position}
         togglePosition={togglePosition}
       />
+      }
     </CardFlip>
   )
 }

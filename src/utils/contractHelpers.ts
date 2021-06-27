@@ -51,6 +51,7 @@ import easterNftAbi from 'config/abi/easterNft.json'
 import cakeVaultAbi from 'config/abi/cakeVault.json'
 import predictionsAbi from 'config/abi/predictions.json'
 import chainlinkOracleAbi from 'config/abi/chainlinkOracle.json'
+import predictionsWithTokenAbi from 'config/abi/predictionsWithToken.json'
 
 const getContract = (abi: any, address: string, web3?: Web3) => {
   const _web3 = web3 ?? web3NoAccount
@@ -127,7 +128,7 @@ export const getPredictionsContract = (web3?: Web3) => {
   return getContract(predictionsAbi, getPredictionsAddress(), web3)
 }
 export const getPredictionsWithTokenContract = (web3?: Web3) => {
-  return getContract(predictionsAbi, getPredictionsWithTokenAddress(), web3)
+  return getContract(predictionsWithTokenAbi, getPredictionsWithTokenAddress(), web3)
 }
 export const getChainlinkOracleContract = (web3?: Web3) => {
   return getContract(chainlinkOracleAbi, getChainlinkOracleAddress(), web3)

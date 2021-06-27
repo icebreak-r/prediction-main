@@ -6,32 +6,27 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Home'),
     icon: 'HomeIcon',
-    href: '/',
+    href: 'https://icebreak-r.com/',
   },
   {
     label: t('Swap'),
     icon: 'TradeIcon',
-    href: 'https://swap.icebreak-r.com/#/swap?inputCurrency=BNB&outputCurrency=0xaabcac4b236d1a7290fb05234862348d274621cf',
+    href: 'https://swap.icebreak-r.com/#/swap?inputCurrency=BNB&outputCurrency=0x82b4b883c813df83623dc7894c1895305680fec2',
   },
   {
     label: t('Liquidity'),
     icon: 'TradeIcon',
-    href: 'https://swap.icebreak-r.com/#/add/BNB/0xaabcac4b236d1a7290fb05234862348d274621cf',
+    href: 'https://swap.icebreak-r.com/#/add/BNB/0x82b4b883c813df83623dc7894c1895305680fec2',
   },
   {
-    label: t("(Wagering BNB) Prediction"),
+    label: t("BNB Prediction (Wagering BNB)"),
     icon: 'PredictionsIcon',
     href: '/prediction',
   },
   {
-    label: t("(Wagering Icebrk) Prediction"),
+    label: t("BNB Prediction (Wagering Icebrk)"),
     icon: 'PredictionsIcon',
     href: '/prediction_with_token',
-  },
-  {
-    label: t('Lottery'),
-    icon: 'TicketIcon',
-    href: '/lottery',
   },
   {
     label: t('Info'),

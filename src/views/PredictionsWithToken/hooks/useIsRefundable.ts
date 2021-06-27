@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { usePredictionsContract } from 'hooks/useContract'
+import { usePredictionsWithTokenContract } from 'hooks/useContract'
 import { useWeb3React } from '@web3-react/core'
 
 const useIsRefundable = (epoch: number) => {
   const [isRefundable, setIsRefundable] = useState(false)
-  const predictionsContract = usePredictionsContract()
+  const predictionsContract = usePredictionsWithTokenContract()
   const { account } = useWeb3React()
 
   useEffect(() => {

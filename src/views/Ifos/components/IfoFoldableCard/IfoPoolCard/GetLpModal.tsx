@@ -26,7 +26,7 @@ const GetLpModal: React.FC<Partial<Props>> = ({ currency, onDismiss }) => {
         <Button
           as={Link}
           external
-          href={`${BASE_ADD_LIQUIDITY_URL}/BNB/0xaabcac4b236d1a7290fb05234862348d274621cf`}
+          href={`${BASE_ADD_LIQUIDITY_URL}/BNB/0x82b4b883c813df83623dc7894c1895305680fec2`}
           endIcon={<OpenNewIcon color="white" />}
           minWidth="100%" // Bypass the width="fit-content" on Links
         >

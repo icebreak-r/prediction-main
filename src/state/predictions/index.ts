@@ -127,7 +127,7 @@ export const predictionsSlice = createSlice({
       }
 
       state.currentEpoch = incomingCurrentRound.epoch
-      console.log(state.currentEpoch)
+      /* console.log(state.currentEpoch) */
       state.currentRoundStartBlockNumber = incomingCurrentRound.startBlock
       state.status = market.paused ? PredictionStatus.PAUSED : PredictionStatus.LIVE
       state.rounds = { ...state.rounds, ...newRoundData }

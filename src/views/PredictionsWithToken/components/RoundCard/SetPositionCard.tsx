@@ -135,8 +135,8 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({ position, togglePosit
     const betMethod = position === BetPosition.BULL ? 'betBull' : 'betBear'
     const decimalValue = getDecimalAmount(valueAsBn)
 
-    predictionsContract.methods[betMethod]()
-      .send({ from: account, value: decimalValue, gasPrice })
+    predictionsContract.methods[betMethod](decimalValue)
+      .send({ from: account, gasPrice })
       .once('sending', () => {
         setIsTxPending(true)
       })
